@@ -1,7 +1,6 @@
 import "./App.css";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
-import LoginView from "./authentication/LogInView";
 import { ThemeSwitcherProvider } from "react-css-theme-switcher";
 import { THEME_CONFIG } from "./configs/AppConfig";
 import Layouts from "./layouts";
@@ -26,7 +25,6 @@ function App() {
             insertionPoint={document.getElementById("inject-styles-here")}
           >
             <Layouts />
-            {/* <LoginView /> */}
           </ThemeSwitcherProvider>
         </BrowserRouter>
       </Provider>
