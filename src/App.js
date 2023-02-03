@@ -8,11 +8,11 @@ import Layouts from "./layouts";
 import store from "./store";
 import * as history from "history";
 
-const cssUrl = "../public/css";
+const cssUrl = "/css";
 
 const themes = {
   dark: `${cssUrl}/dark-theme.css`,
-  light: `${cssUrl}/light-theme.css}`,
+  light: `${cssUrl}/light-theme.css`,
 };
 
 function App() {
@@ -23,7 +23,8 @@ function App() {
           <ThemeSwitcherProvider
             themeMap={themes}
             defaultTheme={THEME_CONFIG.currentTheme}
-            insertionPoint="styles-insertion-point"
+            // insertionPoint="styles-insertion-point"
+            insertionPoint={document.getElementById("inject-styles-here")}
           >
             <Layouts />
             {/* <LoginView /> */}
