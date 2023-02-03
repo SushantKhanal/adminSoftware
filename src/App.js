@@ -23,7 +23,6 @@ function App() {
           <ThemeSwitcherProvider
             themeMap={themes}
             defaultTheme={THEME_CONFIG.currentTheme}
-            // insertionPoint="styles-insertion-point"
             insertionPoint={document.getElementById("inject-styles-here")}
           >
             <Layouts />
