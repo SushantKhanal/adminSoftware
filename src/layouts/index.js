@@ -8,10 +8,10 @@ const AuthLayout = lazy(() => import("./AuthLayout"));
 
 const Layouts = () => {
   //   const token = useSelector((state) => state.auth.token);
-  //   const blankLayout = useSelector((state) => state.theme.blankLayout);
-  //   const direction = useSelector((state) => state.theme.direction);
-  //   const navType = useSelector((state) => state.theme.navType);
-  //   const navCollapsed = useSelector((state) => state.theme.navCollapsed);
+  const blankLayout = useSelector((state) => state.theme.blankLayout);
+  const direction = useSelector((state) => state.theme.direction);
+  const navType = useSelector((state) => state.theme.navType);
+  const navCollapsed = useSelector((state) => state.theme.navCollapsed);
 
   // const Layout = token && !blankLayout ? AppLayout : AuthLayout
   const Layout = AuthLayout;
@@ -19,9 +19,9 @@ const Layouts = () => {
   return (
     <Suspense fallback={<Loading cover="content" />}>
       <Layout
-      // direction={direction}
-      // navType={navType}
-      // navCollapsed={navCollapsed}
+        direction={direction}
+        navType={navType}
+        navCollapsed={navCollapsed}
       >
         <Views />
       </Layout>

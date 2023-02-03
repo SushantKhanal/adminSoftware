@@ -2,13 +2,11 @@ import React from "react";
 import { AUTH_PREFIX_PATH, APP_PREFIX_PATH } from "./AppConfig";
 
 export const publicRoutes = [
-  //   {
-  //     key: "login",
-  //     path: `${AUTH_PREFIX_PATH}/login`,
-  //     component: React.lazy(() =>
-  //       import("../")
-  //     ),
-  //   },
+  {
+    key: "login",
+    path: `${AUTH_PREFIX_PATH}/login`,
+    component: React.lazy(() => import("../authentication/LogInView")),
+  },
   //   {
   //     key: "login-1",
   //     path: `${AUTH_PREFIX_PATH}/login-1`,

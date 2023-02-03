@@ -6,6 +6,7 @@ import { ThemeSwitcherProvider } from "react-css-theme-switcher";
 import { THEME_CONFIG } from "./configs/AppConfig";
 import Layouts from "./layouts";
 import store from "./store";
+import * as history from "history";
 
 const cssUrl = "../public/css";
 
@@ -17,17 +18,17 @@ const themes = {
 function App() {
   return (
     <div className="App">
-      {/* <BrowserRouter>
-        <ThemeSwitcherProvider
-          themeMap={themes}
-          defaultTheme={THEME_CONFIG.currentTheme}
-          insertionPoint="styles-insertion-point"
-        >
-          <Layouts />
-        </ThemeSwitcherProvider>
-      </BrowserRouter> */}
       <Provider store={store}>
-        <LoginView />
+        <BrowserRouter history={history.createBrowserHistory()}>
+          <ThemeSwitcherProvider
+            themeMap={themes}
+            defaultTheme={THEME_CONFIG.currentTheme}
+            insertionPoint="styles-insertion-point"
+          >
+            <Layouts />
+            {/* <LoginView /> */}
+          </ThemeSwitcherProvider>
+        </BrowserRouter>
       </Provider>
     </div>
   );

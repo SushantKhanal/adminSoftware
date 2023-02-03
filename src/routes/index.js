@@ -12,7 +12,7 @@ const Routes = () => {
       <Route path="/" element={<ProtectedRoute />}>
         <Route
           path="/"
-          element={<Navigate replace to={AUTHENTICATED_ENTRY} />}
+          element={<Navigate replace to={AUTHENTICATED_ENTRY} />} // /app/dashboards/default
         />
         {protectedRoutes.map((route, index) => {
           return (
