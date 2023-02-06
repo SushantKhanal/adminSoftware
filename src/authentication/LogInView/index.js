@@ -1,6 +1,6 @@
 import React from "react";
 import { Card, Row, Col } from "antd";
-import { LoginForm } from "../components/LoginForm";
+import LoginForm from "../components/LoginForm";
 
 const backgroundStyle = {
   backgroundColor: "#0096FF",

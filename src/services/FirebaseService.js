@@ -16,6 +16,8 @@ import { FirebaseConfig } from "../configs/FirebaseConfig";
 
 const firebaseApp = initializeApp(FirebaseConfig);
 
+// console.log("firebaseApp", firebaseApp);
+
 const FirebaseService = {};
 
 FirebaseService.db = getFirestore(firebaseApp);

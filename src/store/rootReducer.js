@@ -1,11 +1,11 @@
 import { combineReducers } from "redux";
 import theme from "./slices/themeSlice";
-// import auth from "./slices/authSlice";
+import auth from "./slices/authSlice";
 
 const rootReducer = (asyncReducers) => (state, action) => {
   const combinedReducer = combineReducers({
     theme,
-    // auth,
+    auth,
     ...asyncReducers,
   });
   return combinedReducer(state, action);

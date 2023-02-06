@@ -1,10 +1,32 @@
 import React, { useEffect } from "react";
+import { connect } from "react-redux";
+
 import { Button, Form, Input, Alert } from "antd";
 import { motion } from "framer-motion";
+import {
+  signIn,
+  showLoading,
+  showAuthMessage,
+  hideAuthMessage,
+  signInWithGoogle,
+  signInWithFacebook,
+} from "../../store/slices/authSlice";
 
-export const LoginForm = (props) => {
+const LoginForm = (props) => {
+  const {
+    signIn,
+    showAuthMessage,
+    showLoading,
+    hideAuthMessage,
+    signInWithGoogle,
+    signInWithFacebook,
+    allowRedirect = true,
+  } = props;
+
   const onFinish = (values) => {
-    console.log("Success:", values);
+    console.log("signIn");
+    console.log(props);
+    signIn(values);
   };
 
   const onFinishFailed = (errorInfo) => {
@@ -73,3 +95,19 @@ export const LoginForm = (props) => {
     </>
   );
 };
+
+const mapStateToProps = ({ auth }) => {
+  const { loading, message, showMessage, token, redirect } = auth;
+  return { loading, message, showMessage, token, redirect };
+};
+
+const mapDispatchToProps = {
+  signIn,
+  showAuthMessage,
+  showLoading,
+  hideAuthMessage,
+  signInWithGoogle,
+  signInWithFacebook,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(LoginForm);

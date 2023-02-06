@@ -1,4 +1,6 @@
 import assert from "assert";
+import { initializeApp } from "firebase/app";
+import { getFirestore } from "@firebase/firestore";
 
 const {
   REACT_APP_FIREBASE_API_KEY,
@@ -9,6 +11,8 @@ const {
   REACT_APP_FIREBASE_APP_ID,
   REACT_APP_FIREBASE_MEASUREMENT_ID,
 } = process.env;
+
+console.log("REACT_APP_FIREBASE_API_KEY", REACT_APP_FIREBASE_API_KEY);
 
 assert(REACT_APP_FIREBASE_API_KEY, "FIREBASE_API_KEY is required.");
 assert(REACT_APP_FIREBASE_AUTH_DOMAIN, "FIREBASE_AUTH_DOMAIN is required.");
@@ -36,6 +40,12 @@ export const FirebaseConfig = {
   appId: REACT_APP_FIREBASE_APP_ID,
   measurementId: REACT_APP_FIREBASE_MEASUREMENT_ID,
 };
+
+// export const app = "";
+
+// export const app = initializeApp(FirebaseConfig);
+
+// export const db = getFirestore(app);
 
 //CRUD Operations on firebase database
 // import { db } from "./firebase-config";
