@@ -7,6 +7,11 @@ export const publicRoutes = [
     path: `${AUTH_PREFIX_PATH}/login`,
     component: React.lazy(() => import("../authentication/LogInView")),
   },
+  {
+    key: "register",
+    path: `${AUTH_PREFIX_PATH}/register`,
+    component: React.lazy(() => import("../authentication/Register")),
+  },
 ];
 
 export const protectedRoutes = [];

@@ -8,6 +8,7 @@ import {
   signInWithPopup,
   GoogleAuthProvider,
   FacebookAuthProvider,
+  connectAuthEmulator
 } from "firebase/auth";
 import "firebase/compat/auth";
 import "firebase/compat/firestore";
@@ -20,6 +21,8 @@ const FirebaseService = {};
 
 FirebaseService.db = getFirestore(firebaseApp);
 const auth = getAuth(firebaseApp);
+connectAuthEmulator(auth, 'http://localhost:3001/');
+
 FirebaseService.currentUser = auth.currentUser;
 const googleAuthProvider = new GoogleAuthProvider();
 const facebookAuthProvider = new FacebookAuthProvider();

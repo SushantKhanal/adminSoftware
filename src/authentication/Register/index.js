@@ -1,6 +1,7 @@
 import React from "react";
+import RegisterForm from "../components/RegisterForm";
 import { Card, Row, Col } from "antd";
-import LoginForm from "../components/LoginForm";
+import { useSelector } from "react-redux";
 
 const backgroundStyle = {
   backgroundColor: "#0096FF",
@@ -8,23 +9,22 @@ const backgroundStyle = {
   backgroundSize: "cover",
 };
 
-const LoginView = (props) => {
+const RegisterOne = (props) => {
+  const theme = useSelector((state) => state.theme.currentTheme);
   return (
     <div className="h-100" style={backgroundStyle}>
       <div className="container d-flex flex-column justify-content-center h-100">
         <Row justify="center">
           <Col xs={20} sm={20} md={20} lg={7}>
             <Card>
-              <div className="my-4">
+              <div className="my-2">
                 <div className="text-center">
-                  <p>
-                    Don't have an account yet?{" "}
-                    <a href="/auth/register">Sign Up</a>
-                  </p>
+                  {/* <img className="img-fluid" src={`/img/${theme === 'light' ? 'logo.png': 'logo-white.png'}`} alt="" /> */}
+                  <p className="text-muted">Create a new account:</p>
                 </div>
                 <Row justify="center">
                   <Col xs={24} sm={24} md={20} lg={20}>
-                    <LoginForm {...props} />
+                    <RegisterForm {...props} />
                   </Col>
                 </Row>
               </div>
@@ -36,4 +36,4 @@ const LoginView = (props) => {
   );
 };
 
-export default LoginView;
+export default RegisterOne;
