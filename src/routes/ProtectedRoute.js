@@ -8,12 +8,9 @@ import {
 } from "../configs/AppConfig";
 
 const ProtectedRoute = () => {
-  // const { token } = useSelector(state => state.auth);
-
+  const { token } = useSelector((state) => state.auth);
   const location = useLocation();
-
-  //if(!token)
-  if (true) {
+  if (!token) {
     return (
       <Navigate
         to={`${AUTH_PREFIX_PATH}${UNAUTHENTICATED_ENTRY}?${REDIRECT_URL_KEY}=${location.pathname}`}
@@ -21,7 +18,6 @@ const ProtectedRoute = () => {
       />
     );
   }
-
   return <Outlet />;
 };
 
