@@ -61,7 +61,7 @@ const getNotificationBody = (list) => {
   );
 };
 
-const NavNotification = () => {
+const NavNotifications = () => {
   const [data, setData] = useState(notificationData);
   const notificationList = (
     <div>
@@ -104,4 +104,4 @@ const NavNotification = () => {
   );
 };
 
-export default NavNotification;
+export default NavNotifications;
