@@ -46,15 +46,17 @@ const AppLayout = ({ navCollapsed, navType, direction, children }) => {
   return (
     <Layout>
       <HeaderNav isMobile={isMobile} />
-      <Layout className="app-layout" style={getLayoutDirectionGutter()}>
-        <div className={`app-content`}>
-          <Content>
-            <Suspense fallback={<Loading cover="content" />}>
-              {children}
-            </Suspense>
-          </Content>
-        </div>
-        {/* <Footer /> */}
+      <Layout className="app-container">
+        <Layout className="app-layout" style={getLayoutDirectionGutter()}>
+          <div className={`app-content`}>
+            <Content>
+              <Suspense fallback={<Loading cover="content" />}>
+                {children}
+              </Suspense>
+            </Content>
+          </div>
+          {/* <Footer /> */}
+        </Layout>
       </Layout>
     </Layout>
   );
