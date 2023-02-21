@@ -5,6 +5,7 @@ import {
   MenuFoldOutlined,
   MenuUnfoldOutlined,
   SearchOutlined,
+  MenuOutlined,
 } from "@ant-design/icons";
 import NavNotifications from "./NavNotifications";
 import NavProfile from "./NavProfile";
@@ -21,7 +22,7 @@ import {
   SIDE_NAV_WIDTH,
 } from "../../constants/ThemeConstant";
 import utils from "../../utils";
-import Logo from './Logo';
+import Logo from "./Logo";
 
 const { Header } = Layout;
 
@@ -91,16 +92,12 @@ const HeaderNav = (props) => {
       style={{ backgroundColor: headerNavColor }}
     >
       <div className={`app-header-wrapper`}>
-        <Logo logoType={navMode}/>  
+        <Logo logoType={navMode} />
         <div className="nav" style={{ width: `calc(100% - ${getNavWidth()})` }}>
           <div className="nav-left">
             <div className="nav-item" onClick={onToggle}>
               <div className="d-flex align-items-center">
-                {navCollapsed || isMobile ? (
-                  <MenuUnfoldOutlined className="nav-icon" />
-                ) : (
-                  <MenuFoldOutlined className="nav-icon" />
-                )}
+                <MenuOutlined className="nav-icon" />
               </div>
             </div>
             <ul className="ant-menu ant-menu-root ant-menu-horizontal">
