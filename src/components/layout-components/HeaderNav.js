@@ -21,6 +21,7 @@ import {
   SIDE_NAV_WIDTH,
 } from "../../constants/ThemeConstant";
 import utils from "../../utils";
+import Logo from './Logo';
 
 const { Header } = Layout;
 
@@ -90,6 +91,7 @@ const HeaderNav = (props) => {
       style={{ backgroundColor: headerNavColor }}
     >
       <div className={`app-header-wrapper`}>
+        <Logo logoType={navMode}/>  
         <div className="nav" style={{ width: `calc(100% - ${getNavWidth()})` }}>
           <div className="nav-left">
             <div className="nav-item" onClick={onToggle}>
