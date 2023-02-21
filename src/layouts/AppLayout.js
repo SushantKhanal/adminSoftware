@@ -13,6 +13,9 @@ import {
 import HeaderNav from "../components/layout-components/HeaderNav";
 import Loading from "../shared/components/Loading";
 import utils from "../utils";
+import navigationConfig from "../configs/NavigationConfig";
+import SideNav from "../components/layout-components/SideNav";
+import PageHeader from "../components/layout-components/PageHeader";
 
 const { Content } = Layout;
 const { useBreakpoint } = Grid;
@@ -22,6 +25,13 @@ const AppLayout = ({ navCollapsed, navType, direction, children }) => {
   const isMobile = screens.length === 0 ? false : !screens.includes("lg");
   const isNavSide = navType === NAV_TYPE_SIDE;
   const isNavTop = navType === NAV_TYPE_TOP;
+
+  const location = useLocation();
+
+  const currentRouteInfo = utils.getRouteInfo(
+    navigationConfig,
+    location.pathname
+  );
 
   const getLayoutGutter = () => {
     if (isNavTop || isMobile) {
@@ -47,8 +57,15 @@ const AppLayout = ({ navCollapsed, navType, direction, children }) => {
     <Layout>
       <HeaderNav isMobile={isMobile} />
       <Layout className="app-container">
+        {isNavSide && !isMobile ? (
+          <SideNav routeInfo={currentRouteInfo} />
+        ) : null}
         <Layout className="app-layout" style={getLayoutDirectionGutter()}>
           <div className={`app-content`}>
+            <PageHeader
+              display={currentRouteInfo?.breadcrumb}
+              title={currentRouteInfo?.title}
+            />
             <Content>
               <Suspense fallback={<Loading cover="content" />}>
                 {children}

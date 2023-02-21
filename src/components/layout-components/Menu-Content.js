@@ -5,13 +5,14 @@ import Icon from "../util-components/Icon";
 import navigationConfig from "../../configs/NavigationConfig";
 import { useSelector, useDispatch } from "react-redux";
 import { SIDE_NAV_LIGHT, NAV_TYPE_SIDE } from "../../constants/ThemeConstant";
-import utils from "utils";
+import utils from "../../utils";
 import { onMobileNavToggle } from "../../store/slices/themeSlice";
+import IntlMessage from "../util-components/IntlMessage";
 
 const { useBreakpoint } = Grid;
 
-// const setLocale = (localeKey, isLocaleOn = true) =>
-// 	isLocaleOn ? <IntlMessage id={localeKey} /> : localeKey.toString();
+const setLocale = (localeKey, isLocaleOn = true) =>
+  isLocaleOn ? <IntlMessage id={localeKey} /> : localeKey.toString();
 
 const setDefaultOpen = (key) => {
   let keyList = [];
@@ -41,7 +42,7 @@ const MenuItem = ({ title, icon, path }) => {
   return (
     <>
       {icon && <Icon type={icon} />}
-      <span>{title}</span>
+      <span>{setLocale(title)}</span>
       {path && <Link onClick={closeMobileNav} to={path} />}
     </>
   );

@@ -9,6 +9,7 @@ import {
 import NavNotifications from "./NavNotifications";
 import NavProfile from "./NavProfile";
 import NavSearch from "./NavSearch";
+import NavLanguage from "./NavLanguage";
 import SearchInput from "./NavSearch/SearchInput.js";
 import {
   toggleCollapsedNav,
@@ -122,6 +123,7 @@ const HeaderNav = (props) => {
           </div>
           <div className="nav-right">
             <NavNotifications />
+            <NavLanguage />
             <NavProfile />
           </div>
           <NavSearch active={searchActive} close={onSearchClose} />

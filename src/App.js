@@ -6,6 +6,7 @@ import { THEME_CONFIG } from "./configs/AppConfig";
 import Layouts from "./layouts";
 import store from "./store";
 import * as history from "history";
+import "./lang";
 
 const cssUrl = "/css";
 
