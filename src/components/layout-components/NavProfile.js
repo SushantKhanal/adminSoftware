@@ -7,9 +7,11 @@ import {
   ShopOutlined,
   QuestionCircleOutlined,
   LogoutOutlined,
+  UserOutlined
 } from "@ant-design/icons";
 import Icon from "../util-components/Icon";
 import { signOut } from "../../store/slices/authSlice";
+// import thumb1 from "../../assets/img/thumbs/thumb-1.jpg"
 
 const MenuItem = (props) => (
   <a className="d-flex align-items-center" href={props.path}>
@@ -75,7 +77,7 @@ const NavProfile = () => {
     <Dropdown placement="bottomRight" overlay={menu} trigger={["click"]}>
       <div className="nav-item">
         <div className="d-flex align-items-center">
-          <Avatar src="../../assets/img/avatars/thumb-1.jpg" />
+          <Avatar icon={<UserOutlined />} size="large"/>
           <div className="pl-2 d-none d-sm-block profile-text">
             <div className="font-size-base font-weight-bold">
               Sushant Khanal
