@@ -25,6 +25,7 @@ export const SideNav = ({
       }`}
       width={SIDE_NAV_WIDTH}
       collapsed={navCollapsed}
+      style={{ position: "absolute" }}
     >
       <Scrollbars autoHide>
         <MenuContent type={NAV_TYPE_SIDE} {...props} />

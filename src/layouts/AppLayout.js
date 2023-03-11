@@ -53,15 +53,41 @@ const AppLayout = ({ navCollapsed, navType, direction, children }) => {
   //HeaderNav
   //SideNav & MobileNav
   //Footer
+  // return (
+  //   <Layout>
+  //     <HeaderNav isMobile={isMobile} />
+  //     <Layout className="app-container">
+  //       {isNavSide && !isMobile ? (
+  //         <SideNav routeInfo={currentRouteInfo} />
+  //       ) : null}
+  //       <Layout className="app-layout" style={getLayoutDirectionGutter()}>
+  //         <div className={`app-content`}>
+  //           <PageHeader
+  //             display={currentRouteInfo?.breadcrumb}
+  //             title={currentRouteInfo?.title}
+  //           />
+  //           <Content>
+  //             <Suspense fallback={<Loading cover="content" />}>
+  //               {children}
+  //             </Suspense>
+  //           </Content>
+  //         </div>
+  //         {/* <Footer /> */}
+  //       </Layout>
+  //     </Layout>
+  //   </Layout>
+  // );
+
   return (
     <Layout>
       <HeaderNav isMobile={isMobile} />
+      {/* {isNavTop && !isMobile ? <TopNav routeInfo={currentRouteInfo} /> : null} */}
       <Layout className="app-container">
         {isNavSide && !isMobile ? (
           <SideNav routeInfo={currentRouteInfo} />
         ) : null}
         <Layout className="app-layout" style={getLayoutDirectionGutter()}>
-          <div className={`app-content`}>
+          <div className={`app-content ${isNavTop ? "layout-top-nav" : ""}`}>
             <PageHeader
               display={currentRouteInfo?.breadcrumb}
               title={currentRouteInfo?.title}
@@ -75,6 +101,7 @@ const AppLayout = ({ navCollapsed, navType, direction, children }) => {
           {/* <Footer /> */}
         </Layout>
       </Layout>
+      {/* {isMobile && <MobileNav />} */}
     </Layout>
   );
 };
