@@ -40,7 +40,7 @@ const MenuItem = (props) => {
     dispatch(onLocaleChange(langId));
     i18n.changeLanguage(langId);
   };
-  //{require(`../../assets/img/flags/${props.icon}.png`)}
+
   return (
     <span
       className="d-flex justify-content-between align-items-center"

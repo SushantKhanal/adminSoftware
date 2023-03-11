@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Layout } from "antd";
 import {
-  MenuFoldOutlined,
-  MenuUnfoldOutlined,
   SearchOutlined,
   MenuOutlined,
 } from "@ant-design/icons";
