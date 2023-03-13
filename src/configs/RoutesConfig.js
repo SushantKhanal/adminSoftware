@@ -20,11 +20,11 @@ export const protectedRoutes = [
     path: `${APP_PREFIX_PATH}/dashboards/default`,
     component: React.lazy(() => import("../dashboards/default")),
   },
-  {
-    key: "dashboard.analytic",
-    path: `${APP_PREFIX_PATH}/dashboards/analytic`,
-    component: React.lazy(() => import("../dashboards/analytic")),
-  },
+  // {
+  //   key: "dashboard.analytic",
+  //   path: `${APP_PREFIX_PATH}/dashboards/analytic`,
+  //   component: React.lazy(() => import("../dashboards/analytic")),
+  // },
   {
     key: "dashboard.sales",
     path: `${APP_PREFIX_PATH}/dashboards/sales`,
